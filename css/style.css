@@ -155,7 +155,7 @@ main {
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.ola-pet {
+.caixa-texto-img {
     position: fixed;
     width: 80px;
     height: 80px;
@@ -442,10 +442,14 @@ a {
 
 /* Copyright*/
 .copyright {
+    top: 95%;
+    left: 97%;
     position: fixed;
-    display: flex;
-    flex-direction: row;
-    margin-top: 590px;
-    margin-left: 1250px;
     cursor: pointer;
+    display: flex;
+    color: #4f46e5;
+}
+
+.copyright:hover {
+    color: #3730a3;
 }
