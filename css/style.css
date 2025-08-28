@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #e3e9f7;
+}
+
+main {
+    padding: 20px;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    height: 100vh;
+    border-radius: 0px 18px 18px 0px;
+    position: relative;
+    transition: all .5s;
+    min-width: 82px;
+}
+
+#sidebar_content {
+    padding: 12px;
+}
+
+#user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.fa-solid.fa-bars {
+    align-items: center;
+}
+
+#side_items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.side-item {
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+}
+
+.side-item.active {
+    background-color: #4f46e5;
+}
+
+.side-item:hover:not(.active) {
+    background-color: #e3e9f7;
+}
+
+.side-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0a0a0a;
+}
+
+.side-item.active a {
+    color: #e3e9f7;
+}
+
+.side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+}
+
+#open_btn {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    background-color: #4f46e5;
+    color: #e3e9f7;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#open_btn_icon {
+    transition: transform .3s ease;
+}
+
+.open-sidebar #open_btn_icon {
+    transform: rotate(180deg);
+}
+
+.item-description {
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: width .6s;
+    height: 0px;
+}
+
+#sidebar.open-sidebar {
+    min-width: 15%;
+}
+
+#sidebar.open-sidebar .item-description {
+    width: 150px;
+    height: auto;
+}
+
+#sidebar.open-sidebar a {
+    justify-content: flex-start;
+    gap: 14px;
+}
+
+#sidebar:not(.open-sidebar) #user {
+    justify-content: center;
+}
+
+
+/* Container Inicio*/
+
+#caixaInfos {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 700px;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.ola-pet {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    margin-left: -300px;
+    margin-top: -410px;
+}
+
+.caixa-titulo {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+    padding: 10px;
+    color: #252a40;
+}
+
+.caixa-texto {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    color: #252a40;
+}
+
+.caixa-texto2 {
+    text-align: justify;
+    font-size: 15px;
+    padding: 10px;
+    color: #252a40;
+}
+
+/* TABS Containers*/
+
+#container-cond, #container-rep {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 394px;
+    width: 700px;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 12px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.infos-cond, .infos-rep {
+    width: 660px;
+    height: 310px;
+}
+
+.content-title-cond, .content-title-rep {
+    margin-left: 15px;
+}
+
+.content-description-cond, .content-description-rep {
+    width: 250px;
+    height: 35px;
+    margin-left: 15px;
+    text-align: justify;
+    font-size: 15px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.tab-btn {
+    width: auto;
+    border: none;
+    color: #020617;
+    background-color: #ffffff;
+    border-radius: 8px 8px 0px 0px;
+    font-weight: 500px;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.tab-btn.active {
+    background-color: #c7d2fe;
+}
+
+.tab-btn:hover {
+    background-color: #a5b4fc;
+}
+
+.content {
+    display: none;
+}
+
+.content.show {
+    display: flex;
+    gap: 14px;
+    background-color: #c7d2fe;
+    border-radius: 0px 0px 8px 8px;
+}
+
+/* Container das atividades*/
+
+.content-atvs-cond, .content-atvs-rep {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start;
+    background-color: #e3e9f7;
+    color: #0a0a0a;
+    width: 365px;
+    height: 285px;
+    margin: -70px 10px 20px auto;
+    border-radius: 0px 0px 10px 0px;
+}
+
+.title-atvs-cond {
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    color: #020617;
+    font-weight: bold;
+}
+
+.title-atvs-rep {
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    color: #020617;
+    font-weight: bold;
+}
+
+.infos-atvs-cond, .infos-atvs-rep {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+}
+
+.infos-atvs-rep2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+}
+
+.titulo-infos-atvs-cond {
+    font-size: 16px;
+    color: #020617;
+    padding: 5px;
+    flex: 1;
+    width: 120px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #ffffff;
+}
+
+.titulo-infos-atvs-rep {
+    margin-top: -30px;
+    font-size: 16px;
+    color: #020617;
+    padding: 5px;
+    flex: 1;
+    width: 120px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #ffffff;
+}
+
+.titulo-infos-atvs-rep2 {
+    margin-top: -35px;
+    font-size: 16px;
+    color: #020617;
+    padding: 5px;
+    flex: 1;
+    width: 120px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #ffffff;
+}
+
+
+.textos-infos-atvs-cond {
+    font-size: 14px;
+    color: #020617;
+    padding: 15px;
+    background-color: #ffffff;
+    text-align: ceer;
+    height: 150px;
+    border-radius: 0px 0px 10px 10px ;
+}
+
+.textos-infos-atvs-rep {
+    font-size: 14px;
+    color: #020617;
+    padding: 8px;
+    background-color: #ffffff;
+    text-align: center;
+    height: 85px;
+    width: 150px;
+    border-radius: 0px 0px 10px 10px ;
+}
+
+.textos-infos-atvs-rep2 {
+    font-size: 14px;
+    color: #020617;
+    padding: 8px;
+    background-color: #ffffff;
+    text-align: center;
+    height: 85px;
+    width: 150px;
+    border-radius: 0px 0px 10px 10px ;
+}
+
+.bloco-info-cond:hover .titulo-infos-atvs-cond,
+.bloco-info-cond:hover .textos-infos-atvs-cond,
+.bloco-info-rep:hover .titulo-infos-atvs-rep,
+.bloco-info-rep:hover .textos-infos-atvs-rep,
+.bloco-info-rep2:hover .titulo-infos-atvs-rep2,
+.bloco-info-rep2:hover .textos-infos-atvs-rep2 {
+    background-color: #c7d2fe;
+}
+
+/* Botão ver código dentro do container das infos*/
+
+.ver-codigo-btn-cond {
+    margin-top: 50px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: #a5b4fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ver-codigo-btn-cond2 {
+    margin-top: 30px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: #a5b4fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ver-codigo-btn-rep {
+    text-align: center;
+    margin-top: 0px;
+    padding: 5px 10px;
+    background-color: #a5b4fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.ver-codigo-btn-rep2 {
+    text-align: center;
+    margin-top: 0px;
+    padding: 5px 10px;
+    background-color: #a5b4fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ver-codigo-btn:hover {
+    background-color: #3730a3;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Copyright*/
+.copyright {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    margin-top: 590px;
+    margin-left: 1250px;
+    cursor: pointer;
+}
