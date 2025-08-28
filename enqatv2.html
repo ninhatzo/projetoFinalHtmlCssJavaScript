@@ -202,12 +202,18 @@ a {
     margin-left: 100px;
 }
 
-/* Infos da página*/
-.infos {
+/* Copyright*/
+.copyright {
+    top: 95%;
+    left: 97%;
     position: fixed;
-    margin-top: 590px;
-    margin-left: 1250px;
     cursor: pointer;
+    display: flex;
+    color: #4f46e5;
+}
+
+.copyright:hover {
+    color: #3730a3;
 }
 
     </style>
@@ -398,7 +404,7 @@ h2 {
        </form>
        </center>
 
-       <div class="infos" title="Copyright &copy; ADS2025" ><i class="fa-solid fa-copyright"></i></div>
+       <div class="copyright" title="Copyright &copy; ADS2025" ><i class="fa-solid fa-copyright"></i></div>
     <script>
         // Menu NavBar
     document.getElementById('open_btn').addEventListener('click', function () { 
