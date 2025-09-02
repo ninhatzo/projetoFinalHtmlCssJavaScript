@@ -203,18 +203,49 @@ a {
     margin-left: 50px;
 }
 
-/* Copyright*/
-.copyright {
-    top: 95%;
-    left: 97%;
+/*Copyright*/
+.container {
     position: fixed;
+    left: 70%;
+    top: 92%;
+    width: 500px;
+    height: 0px;
+    background-color: #020617;
+}
+p {
+    font-size: 25px;
+    margin-left: 395px;
     cursor: pointer;
-    display: flex;
-    color: #4f46e5;
+    text-align: center;
+    color: #9aabfd;
+}
+p:hover {
+    color: #3730a3;
+    margin-left: 10px;
 }
 
-.copyright:hover {
-    color: #3730a3;
+p:after {
+    content: attr(data-tooltip);
+    color: #020617;
+    background-color: #ffffff;
+    opacity: 0;
+    padding: 10px;
+    z-index: 3;
+    border-radius: 20px;
+    width: 385px;
+    height: 15px;
+    font-size: 13px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    visibility: hidden;
+    transition: opacity .25s ease-in-out;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+p:hover:after {
+    opacity: 1;
+    visibility: visible;
 }
 
     </style>
@@ -411,7 +442,10 @@ h2 {
        </form>
        </center>
 
-       <div class="copyright" title="Copyright Dev. Ana Silveira &copy; Todos os direitos reservados" ><i class="fa-solid fa-copyright"></i></div>
+       <div class="container">
+        <p data-tooltip="Copyright Dev. Ana Silveira &copy; Todos os direitos reservados" data-position="top"><i class="fa-solid fa-copyright"></i></p>
+    </div>
+    
     <script>
         // Menu NavBar
     document.getElementById('open_btn').addEventListener('click', function () { 
